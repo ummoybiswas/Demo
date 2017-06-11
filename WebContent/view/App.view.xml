@@ -1,0 +1,51 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="sap.myApp.controller.App" xmlns:html="http://www.w3.org/1999/xhtml">
+<Text text="hello {Cars>/car/0/carModel/}"/>
+
+		<Table id="idCompanyTable"
+		inset="false"
+		mode="SingleSelectMaster"
+		itemPress="onRowSelection"
+		items="{
+			path: 'Cars>/car/'
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Cars" level="H2"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Car Brand" />
+			</Column>
+			<Column>
+				<Text text="Year" />
+			</Column>
+			<Column>
+				<Text text="Action" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Active">
+				<cells>
+					<ObjectIdentifier
+						title="{Cars>carModel}"
+						text="{Cars>carModel}"/>
+					<Text
+						text="{Cars>year}" />
+					<HBox alignItems="Left" justifyContent="Start">
+						<Button 
+							icon ="sap-icon://edit" 
+							type = "sap.m.ButtonType.Accept"
+							press= "editController"/>
+						<Button 
+							icon ="sap-icon://delete" 
+							type = "sap.m.ButtonType.Reject"
+							press= "deleteController"/>
+					</HBox>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+</core:View>

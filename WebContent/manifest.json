@@ -1,0 +1,65 @@
+{
+        "_version": "1.1.0",
+        "sap.app": {
+                "_version": "1.1.0",
+                "id": "sap.myApp",
+                "type": "application",
+                "i18n": "i18n/texts.properties",
+                "title": "Hello World",
+                "description": "Tutorial",
+                "applicationVersion": {
+                        "version": "1.0.0"
+                }
+        },
+        "sap.ui": {
+                "_version": "1.1.0",
+                "technology": "UI5",
+                "deviceTypes": {
+                        "desktop": true,
+                        "tablet": true,
+                        "phone": true
+                },
+                "supportedThemes": [
+                        "sap_hcb",
+                        "sap_belize"
+                ]
+        },
+        "sap.ui5": {
+                "_version": "1.1.0",
+                "rootView":{
+                	"viewName":"sap.myApp.view.View1",
+                	"type":"XML"
+                },
+                "dependencies": {
+                        "minUI5Version": "1.38.1",
+                        "libs": {
+                                "sap.ui.core": {
+                                        "minVersion": "1.38.1"
+                                },
+                                "sap.m": {
+                                        "minVersion": "1.38.1"
+                                },
+                                "sap.ui.commons": {},
+                                "sap.ui.layout": {
+                                        "minVersion": "1.38.1"
+                               }
+                        }
+                       
+                },
+                "models":{
+                	"Cars":{
+                		"type":"sap.ui.model.json.JSONModel",
+                		"uri": "models/cars.json"
+                	}
+                },
+                "resources":{
+                	"css": [{
+                		"uri" : "css/style.css"
+                	}]
+                }, 
+                "contentDensities": {
+                        "compact": true,
+                        "cozy": true
+                }
+        }
+}
